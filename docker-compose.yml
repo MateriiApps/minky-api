@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+    minky-api:
+        container_name: minky-api
+        restart: on-failure
+        build:
+          context: .
+          dockerfile: Dockerfile
+        ports: 
+          - 47822:47822
+        volumes:
+          - ./minky:/app/minky
