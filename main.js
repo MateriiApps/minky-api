@@ -21,8 +21,10 @@ fs.readdir("./minky", (err, files) => {
 app.get("/", (_, res) => {
     const randomIndex = Math.floor(Math.random() * minkys.length);
     const randomFile = minkys[randomIndex];
+    const fileName = randomFile.replace(/^.*[\\/]/, '');
 
-    res.sendFile(randomFile);
+    res.set("Content-Disposition", `inline; filename="${fileName}"`)
+       .sendFile(randomFile);
 });
 
 app.listen(port, () => {
