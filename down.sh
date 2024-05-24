@@ -1,1 +1,1 @@
-sudo docker-compose -p minkyapi down
+docker-compose -p minkyapi down
