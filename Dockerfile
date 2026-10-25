@@ -1,8 +1,8 @@
-FROM node:alpine3.18
+FROM node:26-alpine
 
 WORKDIR /app
 ADD main.js package*.json /app/
 RUN npm ci
 
-EXPOSE 47822
+EXPOSE 8080
 CMD ["node", "main.js"]

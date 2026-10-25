@@ -1,1 +1,1 @@
-docker-compose -p minkyapi down
+docker compose down

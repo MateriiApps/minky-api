@@ -1,1 +1,1 @@
-docker-compose -p minkyapi up --build -d
+docker compose up --build -d
