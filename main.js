@@ -21,6 +21,12 @@ fs.readdir("./minky", (err, files) => {
 app.get("/", (_, res) => {
     const randomIndex = Math.floor(Math.random() * minkys.length);
     const randomFile = minkys[randomIndex];
+
+    if (!randomFile) {
+        res.status(404).send("Not Found!");
+        return;
+    }
+
     const fileName = randomFile.replace(/^.*[\\/]/, '');
 
     res.set("Content-Disposition", `inline; filename="${fileName}"`)
